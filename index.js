@@ -15,16 +15,17 @@ const questions = [
 function writeToFile(fileName, data) {
     fs.writeFile(`./output/README.md`, 
         //TODO Include Answers
+        `${data.projectName}`
         , 
         (error) => error ? console.log(err) : console.log(`Success!`))
-  })
 }
+
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer
     .prompt(questions)
-    .then(writeToFile(ReamMe, answers)
+    .then(writeToFile(ReamMe, answers))
     .catch((e) => {if (err) throw err;});
 }
 
