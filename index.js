@@ -1,6 +1,8 @@
 // TODO: Include packages needed for this application
-var fs = require(`fs`);
-var inquirer = require(`fs`);
+const fs = require(`fs`);
+const inquirer = require(`fs`);
+const path = require(`path`);
+const generateMarkdown = (`./utils/generateMarkdown`)
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -11,6 +13,16 @@ const questions = [
     // TODO: Add questions for description, installation instructions, usage information, contribution guidelines, and test instructions
     // TODO: Add a list question for liscence information
     // TODO: Add questions for gitHub and email contact ino
+    // What's your Github Username
+    // What is your email address
+    // What is your project title?
+    // Please write a short project description
+    // Please write a link to a picture or video of the project
+    // What kind of license does your project have?
+    // What command should be run to install dependencies?
+    // What command should be run for tests?
+    // What should a contributor know about using the repositiory?
+    // List any other main contributors to the repo
     },
 ];
 
