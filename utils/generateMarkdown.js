@@ -71,12 +71,6 @@ function generateMarkdown(data) {
     contents = contents.concat(`\n\n## Testing\n\n${data.testingInstructions}`);
   };
 
-  //Creates testing section if included
-  if (data.testingInstructions) {
-    toc = toc.concat(`\n1. [Testing](#testing)`);
-    contents = contents.concat(`\n\n## Testing\n\n${data.testingInstructions}`);
-  };
-
   //Checks if there are other contributors and creates credit section
   if (data.contributors) {
     toc = toc.concat(`\n1. [Credits](#credits)`);
@@ -86,13 +80,17 @@ function generateMarkdown(data) {
     };
   };
 
-  //Creates contributor section if there aren't listed contributors but are additional resources used
+  //Creates credit section if there aren't listed contributors but are additional resources used
   if (!data.contributors && data.contributors) {
     toc = toc.concat(`\n1. [Credits](#credits)`);
     contents = contents.concat(`\n\nAdditional resources used include ${data.resources}`);
   }
 
-  
+  //Creates feedback section if included
+  if (data.feedback) {
+    toc = toc.concat(`\n1. [Feedback](#feedback)`);
+    contents = contents.concat(`\n\n## Feedback\n\n${data.feedback}`);
+  };
 
   header = header.concat(toc);
   header = header.concat(`\n---`);
