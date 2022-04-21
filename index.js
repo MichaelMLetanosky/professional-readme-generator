@@ -24,7 +24,7 @@ const questions = [
     },
     {
     type: `input`,
-    message: `Please submit a link to a photo or video of your project, if any`,
+    message: `Please submit a link to a photo or gif of your project, if any`,
     name: `mediaURL`,
     },
     {
