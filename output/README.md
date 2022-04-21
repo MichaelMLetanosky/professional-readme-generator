@@ -1,21 +1,43 @@
-# I'm Sitting
+# Welcome
 
 ## Description
 
-by the dock on the bay
+  Humans
 
 ## Table of Contents
 ---
 1. [Install](#install)
 1. [Instructions](#instructions)
+1. [Contribute](#contribute)
+1. [Testing](#testing)
+1. [Credits](#credits)
+1. [Feedback](#feedback)
 ---
 
 ## Install
 
-Watching the clouds
+  to Kand
 
 ## Instructions
 
-!(roll away)
+  !(and Kodos)
 
-Just sitting
+  Twirl and Hurl
+
+## Contribute
+
+  Once seated
+
+## Testing
+
+  Please buckle
+
+## Credits
+
+  Project contributors are in all
+
+  Additional resources used include passengers
+
+## Feedback
+
+  before lift off

@@ -13,7 +13,7 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   // Sets up starting mark down
-  let header = `# ${data.projectName}\n\n## Description\n\n${data.description}`;
+  let header = `# ${data.projectName}\n\n## Description\n\n  ${data.description}`;
 
   let toc = `\n\n## Table of Contents\n---`;
 
@@ -29,7 +29,7 @@ function generateMarkdown(data) {
   if (!data.installInstructions &&
       !data.mediaURL &&
       !data.userInstructions &&
-      !data.contributInstructions &&
+      !data.contributeInstructions &&
       !data.testingInstructions &&
       !data.contributors &&
       !data.resources &&
@@ -41,55 +41,55 @@ function generateMarkdown(data) {
   //Checks for install instructions, adds them to the Table of Contents and the Content section if included
   if (data.installInstructions) {
     toc = toc.concat(`\n1. [Install](#install)`);
-    contents = contents.concat(`\n\n## Install\n\n${data.installInstructions}`);
+    contents = contents.concat(`\n\n## Install\n\n  ${data.installInstructions}`);
   };
 
   //Checks if there is a photo/gif and creates instruction section
   if (data.mediaURL) {
     toc = toc.concat(`\n1. [Instructions](#instructions)`);
-    contents = contents.concat(`\n\n## Instructions\n\n!(${data.mediaURL})`);
+    contents = contents.concat(`\n\n## Instructions\n\n  !(${data.mediaURL})`);
     if (data.userInstructions) {
-      contents = contents.concat(`\n\n${data.userInstructions}`);
+      contents = contents.concat(`\n\n  ${data.userInstructions}`);
     };
   };
 
   //Creates instruction section if there isn't a photo but are instructions
   if (!data.mediaURL && data.userInstructions) {
     toc = toc.concat(`\n1. [Instructions](#instructions)`);
-    contents = contents.concat(`\n\n## Instructions\n\n${data.userInstructions}`);
+    contents = contents.concat(`\n\n## Instructions\n\n  ${data.userInstructions}`);
   }
 
   //Creates contribute section if included
-  if (data.contributInstructions) {
+  if (data.contributeInstructions) {
     toc = toc.concat(`\n1. [Contribute](#contribute)`);
-    contents = contents.concat(`\n\n## Contribute\n\n${data.contributInstructions}`);
+    contents = contents.concat(`\n\n## Contribute\n\n  ${data.contributeInstructions}`);
   };
 
   //Creates testing section if included
   if (data.testingInstructions) {
     toc = toc.concat(`\n1. [Testing](#testing)`);
-    contents = contents.concat(`\n\n## Testing\n\n${data.testingInstructions}`);
+    contents = contents.concat(`\n\n## Testing\n\n  ${data.testingInstructions}`);
   };
 
   //Checks if there are other contributors and creates credit section
   if (data.contributors) {
     toc = toc.concat(`\n1. [Credits](#credits)`);
-    contents = contents.concat(`\n\n## Credits\n\nProject contributors are ${data.contributors}`);
+    contents = contents.concat(`\n\n## Credits\n\n  Project contributors are ${data.contributors}`);
     if (data.contributors) {
-      contents = contents.concat(`\n\nAdditional resources used include ${data.resources}`);
+      contents = contents.concat(`\n\n  Additional resources used include ${data.resources}`);
     };
   };
 
   //Creates credit section if there aren't listed contributors but are additional resources used
   if (!data.contributors && data.contributors) {
     toc = toc.concat(`\n1. [Credits](#credits)`);
-    contents = contents.concat(`\n\nAdditional resources used include ${data.resources}`);
+    contents = contents.concat(`\n\n  Additional resources used include ${data.resources}`);
   }
 
   //Creates feedback section if included
   if (data.feedback) {
     toc = toc.concat(`\n1. [Feedback](#feedback)`);
-    contents = contents.concat(`\n\n## Feedback\n\n${data.feedback}`);
+    contents = contents.concat(`\n\n## Feedback\n\n  ${data.feedback}`);
   };
 
   header = header.concat(toc);
