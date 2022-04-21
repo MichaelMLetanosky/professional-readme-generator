@@ -44,7 +44,7 @@ const questions = [
     },
     {
     type: `input`,
-    message: `List any other contributors to this project`,
+    message: `List all contributors to this project`,
     name: `contributors`,
     },
     {
