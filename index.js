@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require(`fs`);
-const inquirer = require(`fs`);
+var inquirer = require(`inquirer`);
 const path = require(`path`);
-const generateMarkdown = (`./utils/generateMarkdown`)
+const generateMarkdown = require(`./utils/generateMarkdown`);
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -10,44 +10,79 @@ const questions = [
     type: `input`,
     message: `What is your project's name?`,
     name: `projectName`,
-    // TODO: Add questions for description, installation instructions, usage information, contribution guidelines, and test instructions
-    // TODO: Add a list question for liscence information
-    // TODO: Add questions for gitHub and email contact ino
-    // What's your Github Username
-    // What is your email address
-    // What is your project title?
-    // Please write a short project description
-    // Please write a link to a picture or video of the project
-    // What kind of license does your project have?
-    // What command should be run to install dependencies?
-    // What command should be run for tests?
-    // What should a contributor know about using the repositiory?
-    // List any other main contributors to the repo
     },
+    {
+    type: `input`,
+    message: `Write a brief description of your project`,
+    name: `description`,
+    },
+    // {
+    // type: `input`,
+    // message: `What special instructions are there for installing your project?`,
+    // name: `installInstructions`,
+    // },
+    // {
+    // type: `input`,
+    // message: `Please submit a link to a photo or video of your project, if any`,
+    // name: `mediaURL`,
+    // },
+    // {
+    // type: `input`,
+    // message: `What special instructions are there for using your project/application?`,
+    // name: `userInstructions`,
+    // },
+    // {
+    // type: `input`,
+    // message: `What special instructions are there for contributing to your project?`,
+    // name: `contributeInstructions`,
+    // },
+    // {
+    // type: `input`,
+    // message: `What special instructions are there for testing your project?`,
+    // name: `testingInstructions`,
+    // },
+    // {
+    // type: `input`,
+    // message: `List any other contributors to this project`,
+    // name: `contributors`,
+    // },
+    // {
+    // type: `input`,
+    // message: `List any other 3rd party assets or additional resources used for this project`,
+    // name: `resources`,
+    // },
+    // {
+    // type: `input`,
+    // message: `How should someone submit feedback or report issues for the project?`,
+    // name: `feedback`,
+    // },
+    {
+    type: `list`,
+    message: `Which of these licenses are you using?`,
+    name: `license`,
+    choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
+    }
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(`./output/README.md`, 
-        // TODO: Include Answers in a README mock up
-        // TODO: Include Title with Project Name
-        // TODO: Include linking table of contents
-        // TODO: Include license bridge
-        // TODO: Include sections for description, installation instructions, usage information, contribution guidelines, and test instructions
-        `${data.projectName}`
-        // TODO: Include generateMarkdown for license stuff
-        // TODO: Add questions section with contact info
-        , 
-        (error) => error ? console.log(err) : console.log(`Success!`))
+    console.log(fileName)
+    console.log(data)
+    // fs.writeFile(`./output/README.md`, generateMarkdown(data)
+    
+        // , 
+        // (error) => error ? console.log(err) : console.log(`Success!`))
 }
 
 
 // TODO: Create a function to initialize app
 function init() {
+  const readMe = `README`
+
   inquirer
     .prompt(questions)
-    .then(writeToFile(ReamMe, answers))
-    .catch((e) => {if (err) throw err;});
+    .then((answers) => writeToFile(readMe, answers))
+    .catch((e) => {if (e) throw e;});
 }
 
 // Function call to initialize app
