@@ -59,9 +59,10 @@ function generateMarkdown(data) {
     contents = contents.concat(`\n\n## Instructions\n\n${data.userInstructions}`);
   }
 
-  if (data.installInstructions) {
-    toc = toc.concat(`\n1. [Install](#install)`);
-    contents = contents.concat(`\n\n## Install\n\n${data.installInstructions}`);
+  //Creates contribute section if included
+  if (data.contributInstructions) {
+    toc = toc.concat(`\n1. [Contribute](#contribute)`);
+    contents = contents.concat(`\n\n## Contribute\n\n${data.contributInstructions}`);
   };
 
   header = header.concat(toc);
