@@ -14,6 +14,8 @@
 
 ## Install
 
+  ./images/README%20Generator%20Tutorial.mov
+
   The application requires inquirer and fs, the file can be installed by typing `npm install`
 
 ## Instructions
