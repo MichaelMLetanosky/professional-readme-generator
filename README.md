@@ -14,7 +14,7 @@
 
 ## Install
 
-  ./images/README%20Generator%20Tutorial.mov
+  [![Demo video of application](./images/README%20Generator%20Tutorial.gif)](https://drive.google.com/file/d/1DncmM3x6AG6Yacmic8G75Bx2dtj_ew3T/view?usp=sharing)
 
   The application requires inquirer and fs, the file can be installed by typing `npm install`
 
